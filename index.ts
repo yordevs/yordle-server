@@ -53,7 +53,7 @@ app.post('/guess', (req: TypedRequestBody<{ guess: string, guessNumber: number, 
     const fullAnswer: Answer = getAnswer([... yorkAnswers])
     
     
-    if (req.body.guess && typeof req.body.guessNumber == 'number') {
+    if (typeof req.body.guess === 'string' && typeof req.body.guessNumber == 'number') {
         const guess: Array<string> = req.body.guess.toLocaleLowerCase().split("");
         const guessNumber: number = req.body.guessNumber;
 
