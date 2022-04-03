@@ -26,9 +26,6 @@ const app: express.Application = express();
 app.use(cors())
 app.use(bodyParser.json())
 
-const port: number = 6969
-
-
 var allWords: Array<string>;
 fs.readFile("resources/words.json", "utf-8", function (err, data) {
     if (err) throw err;
@@ -121,6 +118,8 @@ app.post('/guess', (req: TypedRequestBody<{ guess: string, guessNumber: number, 
         res.status(403).send(forbiddenResponse);
     };
 });
+
+const port = process.env.PORT || 4000
 
 app.listen(port, () => {
     console.log(`Running on port: ${port}`);
