@@ -1,4 +1,5 @@
 import express, { Request, Response } from 'express';
+import getAnswer from "./utils/getAnswer"
 import cors from "cors";
 import bodyParser from 'body-parser';
 import fs from 'fs';
@@ -46,13 +47,15 @@ fs.readFile("resources/yorkWords.json", "utf-8", function (err, data) {
 var yorkWords: Array<string> = yorkAnswers.map(answer => answer.word)
 
 
-function checkWin(result: Array<string>) {
+const checkWin = function (result: Array<string>): Boolean {
     return result.every((colour) => colour == "green")
 }
 
 
 app.post('/guess', (req: TypedRequestBody<{ guess: string, guessNumber: number, token?: "string" }>, res: express.Response) => {
-    const fullAnswer: Answer = yorkAnswers[1]
+    const fullAnswer: Answer = getAnswer([... yorkAnswers])
+    
+    
     if (req.body.guess && typeof req.body.guessNumber == 'number') {
         const guess: Array<string> = req.body.guess.toLocaleLowerCase().split("");
         const guessNumber: number = req.body.guessNumber;
