@@ -119,6 +119,10 @@ app.post('/guess', (req: TypedRequestBody<{ guess: string, guessNumber: number, 
     };
 });
 
+app.get("*", (req, res) => {
+    res.redirect("https://www.youtube.com/watch?v=dQw4w9WgXcQ")
+})
+
 const port = process.env.PORT || 4000
 
 app.listen(port, () => {
