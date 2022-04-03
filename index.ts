@@ -8,14 +8,16 @@ interface TypedRequestBody<T> extends Express.Request {
 };
 
 interface ResponseBody {
-    result: Array<string>,
-    answer?: string
+    valid: boolean,
+    result?: Array<string>,
+    answer?: string,
+    description?: string
 }
 
 var forbiddenResponse: string;
 fs.readFile('resources/forbiddenResponse.txt', 'utf8', function (err, data) {
     if (err) throw err;
-    forbiddenResponse = data
+    forbiddenResponse = data;
 });
 
 const app: express.Application = express();
@@ -25,13 +27,41 @@ app.use(bodyParser.json())
 
 const port: number = 6969
 
-const answer: string = "goose"
+
+var allWords: Array<string>;
+fs.readFile("resources/words.json", "utf-8", function (err, data) {
+    if (err) throw err;
+    allWords = JSON.parse(data)
+})
+
+interface Answer {
+    word: string,
+    description: string
+}
+var yorkAnswers: Array<Answer> = [];
+fs.readFile("resources/yorkWords.json", "utf-8", function (err, data) {
+    if (err) throw err;
+    yorkAnswers = JSON.parse(data)
+})
+var yorkWords: Array<string> = yorkAnswers.map(answer => answer.word)
+
+
+function checkWin(result: Array<string>) {
+    return result.every((colour) => colour == "green")
+}
+
 
 app.post('/guess', (req: TypedRequestBody<{ guess: string, guessNumber: number, token?: "string" }>, res: express.Response) => {
-    if (req.body.guess && req.body.guessNumber) {
-        const guess: Array<string> = req.body.guess.split("");
+    const fullAnswer: Answer = yorkAnswers[1]
+    if (req.body.guess && typeof req.body.guessNumber == 'number') {
+        const guess: Array<string> = req.body.guess.toLocaleLowerCase().split("");
         const guessNumber: number = req.body.guessNumber;
 
+        if (!allWords.includes(guess.join("")) && !yorkWords.includes(guess.join(""))) {
+            return res.status(200).send({valid: false})
+        }
+
+        const answer: string = fullAnswer.word;
         const result: Array<string> = ["", "", "", "", ""];
 
         // process green
@@ -48,7 +78,7 @@ app.post('/guess', (req: TypedRequestBody<{ guess: string, guessNumber: number, 
         }
         var count = 0
         for (let pos of greenPositions) {
-            guessAnswer.splice(pos-count,1); // subtract from pos couse removing decreases size of list
+            guessAnswer.splice(pos-count,1); // subtract from pos because removing decreases size of list
             count += 1
         }
 
@@ -71,12 +101,17 @@ app.post('/guess', (req: TypedRequestBody<{ guess: string, guessNumber: number, 
         }
 
         const responseBody: ResponseBody= {
+            valid: true,
             result: result
         };
 
-        if (guessNumber == 6 && (result.includes("yellow") || result.includes("grey"))) {
+        if (guessNumber == 5 && !checkWin(result)) {
             responseBody.answer = answer;
+            responseBody.description = fullAnswer.description
         };
+        if (checkWin(result)) {
+            responseBody.description = fullAnswer.description
+        }
 
         res.status(200).send(responseBody)
     } else {
