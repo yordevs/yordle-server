@@ -41,7 +41,6 @@ fs.readFile("resources/yorkWords.json", "utf-8", function (err, data) {
     if (err) throw err;
     yorkAnswers = JSON.parse(data)
 })
-var yorkWords: Array<string> = yorkAnswers.map(answer => answer.word)
 
 
 const checkWin = function (result: Array<string>): Boolean {
@@ -51,13 +50,14 @@ const checkWin = function (result: Array<string>): Boolean {
 
 app.post('/guess', (req: TypedRequestBody<{ guess: string, guessNumber: number, token?: "string" }>, res: express.Response) => {
     const fullAnswer: Answer = getAnswer([... yorkAnswers])
-    
+    var yorkWords: Array<string> = yorkAnswers.map(answer => answer.word)
     
     if (typeof req.body.guess === 'string' && typeof req.body.guessNumber == 'number') {
         const guess: Array<string> = req.body.guess.toLocaleLowerCase().split("");
         const guessNumber: number = req.body.guessNumber;
 
         if (!allWords.includes(guess.join("")) && !yorkWords.includes(guess.join(""))) {
+            console.log(yorkWords)
             return res.status(200).send({valid: false})
         }
 
