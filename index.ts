@@ -13,7 +13,7 @@ interface ResponseBody {
 }
 
 var forbiddenResponse: string;
-fs.readFile('forbiddenResponse.txt', 'utf8', function (err, data) {
+fs.readFile('resources/forbiddenResponse.txt', 'utf8', function (err, data) {
     if (err) throw err;
     forbiddenResponse = data
 });
