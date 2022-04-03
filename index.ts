@@ -29,22 +29,45 @@ const answer: string = "goose"
 
 app.post('/guess', (req: TypedRequestBody<{ guess: string, guessNumber: number, token?: "string" }>, res: express.Response) => {
     if (req.body.guess && req.body.guessNumber) {
-        const guess: string = req.body.guess;
+        const guess: Array<string> = req.body.guess.split("");
         const guessNumber: number = req.body.guessNumber;
 
-        const result: Array<string> = [];
+        const result: Array<string> = ["", "", "", "", ""];
 
+        // process green
+        var guessAnswer: Array<string> = answer.split("");
+        var greenPositions: Array<number> = []
         for (let i = 0; i < guess.length; i++) {
             let guessLetter: string = guess[i];
             let answerLetter: string = answer[i];
 
             if (guessLetter === answerLetter) {
-                result.push("green");
-            } else if (answer.includes(guessLetter)) {
-                result.push("yellow");
-            } else {
-                result.push("grey");
-            };
+                result[i] = "green";
+                greenPositions.push(i);
+            }
+        }
+        var count = 0
+        for (let pos of greenPositions) {
+            guessAnswer.splice(pos-count,1); // subtract from pos couse removing decreases size of list
+            count += 1
+        }
+
+        // process yellow
+        for (let i = 0; i < guess.length; i++) {
+            if (!greenPositions.includes(i)) {
+                let guessLetter: string = guess[i];
+                if (guessAnswer.includes(guessLetter)) {
+                    result[i] = "yellow";
+                    guessAnswer.splice(guessAnswer.indexOf(guessLetter), 1)
+                }
+            }
+        }
+
+        // set the remaining to grey
+        for (let i = 0; i < guess.length; i++) {
+            if (result[i] === "") {
+                result[i] = "grey"
+            }
         }
 
         const responseBody: ResponseBody= {
