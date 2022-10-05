@@ -1,114 +1,130 @@
 [
-	{
-		"word": "geese",
-		"description": "HONK!!!"
-	},
-	{
-		"word": "goose",
-		"description": "Honk!"
-	},
-	{
-		"word": "ducks",
-		"description": "The University of York campus is full of ducks, including the world famous longboi."
-	},
-	{
-		"word": "james",
-		"description": "James college is a college at the University of York."
-	},
-	{
-		"word": "roses",
-		"description": "Roses is the University's annual varsity competition vs Lancaster (ROSES ARE WHITE!)"
-	},
-	{
-		"word": "white",
-		"description": "Roses are white! Don't let anyone from Lancaster tell you otherwise."
-	},
-	{
-		"word": "walls",
-		"description": "York is famously a walled city, they surround the city and are 4.2km long!"
-	},
-	{
-		"word": "norse",
-		"description": "The vikings invaded and captured york in 886AD, they named the city 'Jorvik'"
-	},
-	{
-		"word": "river",
-		"description": "The river Ouse runs through the center of York, and sometimes onto it's streets when it floods."
-	},
-	{
-		"word": "gates",
-		"description": "The city of York has four medival main gates that are linked bu the walls, Bootham, Micklegate, Monk, Walmgate."
-	},
-	{
-		"word": "ghost",
-		"description": "York is supposedly one of the most haunted, spooooooooooooky."
-	},
-	{
-		"word": "roman",
-		"description": "Romans first settled in York in 73AD, and Constantine the Great was first proclaimed leader in the city."
-	},
-	{
-		"word": "flood",
-		"description": "The city of York regularly floods, leaving some students favourite drinking spots under water."
-	},
-	{
-		"word": "terry",
-		"description": "Terry's is a British chocolate and confectionery maker, formerly based in York,"
-	},
-	{
-		"word": "nouse",
-		"description": "Nouse is a student newspaper and news website at the University of York. It's the oldest society at the university!"
-	},
-	{
-		"word": "roast",
-		"description": "If you've ever been into York on a Saturday morning, you're probably very familiar with York Roast Co's Yorkshire Pudding wraps!"
-	},
-	{
-		"word": "dales",
-		"description": "The Yorkshire Dales are a lovely area to explore, and are only a short drive away from York."
-	},
-	{
-		"word": "stray",
-		"description": "You'll probably walk across Walmgate Stray at least once in your university career. It can get pretty chilly in Winter!"
-	},
-	{
-		"word": "cooke",
-		"description": "Sir Ronald Urwick Cooke was a Vice-Chancellor at the university. He even has a building named after him on East Campus, the Ron Cooke Hub!"
-	},
-	{
-		"word": "roger",
-		"description": "Visit the Roger Kirk Centre, next to James College, for a bite to eat and a catch-up with your friends/"
-	},
-	{
-		"word": "tower",
-		"description": "Clifford's Tower is one of York's most iconic attractions. The tower recently reopened after a conservation project, so make sure to visit and climb to the top!"
-	},
-	{
-		"word": "acres",
-		"description": "22 Acres are the University of York's playing fields, nestled away next to Halifax College."
-	},
-	{
-		"word": "court",
-		"description": "If you're ever in Derwent, make sure to pay The Courtyard a visit. With events from Karaoke to Quiz Nights, there's something for everyone!"
-	},
-	{
-		"word": "glass",
-		"description": "The Glasshouse is Langwith's student bar, over on East Campus. Stop by for a drink and a game of pool!"
-	},
-	{
-		"word": "field",
-		"description": "Linking the two university campuses, Field Lane is a popular route for students commuting to and from lectures."
-	},
-	{
-		"word": "horse",
-		"description": "York Racecourse traditionally hosts the Summer Ball for University of York students every year. It's certainly an experience!"
-	},
-	{
-		"word": "races",
-		"description": "Horse racing is a tradition in York dating all the way back to Roman times!"
-	},
-	{
-		"word": "punch",
-		"description": "Situated near the station, The Punch Bowl is one of the two Wetherspoons pubs in York, and is a great place to get cheap food and drink."
-	}
+  {
+    "word": "geese",
+    "description": "HONK!!!"
+  },
+  {
+    "word": "goose",
+    "description": "Honk!"
+  },
+  {
+    "word": "ducks",
+    "description": "The University of York campus is full of ducks, including the world famous longboi."
+  },
+  {
+    "word": "james",
+    "description": "James college is a college at the University of York."
+  },
+  {
+    "word": "roses",
+    "description": "Roses is the University's annual varsity competition vs Lancaster (ROSES ARE WHITE!)"
+  },
+  {
+    "word": "white",
+    "description": "Roses are white! Don't let anyone from Lancaster tell you otherwise."
+  },
+  {
+    "word": "walls",
+    "description": "York is famously a walled city, they surround the city and are 4.2km long!"
+  },
+  {
+    "word": "norse",
+    "description": "The vikings invaded and captured york in 886AD, they named the city 'Jorvik'"
+  },
+  {
+    "word": "river",
+    "description": "The river Ouse runs through the center of York, and sometimes onto it's streets when it floods."
+  },
+  {
+    "word": "gates",
+    "description": "The city of York has four medival main gates that are linked bu the walls, Bootham, Micklegate, Monk, Walmgate."
+  },
+  {
+    "word": "ghost",
+    "description": "York is supposedly one of the most haunted, spooooooooooooky."
+  },
+  {
+    "word": "roman",
+    "description": "Romans first settled in York in 73AD, and Constantine the Great was first proclaimed leader in the city."
+  },
+  {
+    "word": "flood",
+    "description": "The city of York regularly floods, leaving some students favourite drinking spots under water."
+  },
+  {
+    "word": "terry",
+    "description": "Terry's is a British chocolate and confectionery maker, formerly based in York,"
+  },
+  {
+    "word": "nouse",
+    "description": "Nouse is a student newspaper and news website at the University of York. It's the oldest society at the university!"
+  },
+  {
+    "word": "roast",
+    "description": "If you've ever been into York on a Saturday morning, you're probably very familiar with York Roast Co's Yorkshire Pudding wraps!"
+  },
+  {
+    "word": "dales",
+    "description": "The Yorkshire Dales are a lovely area to explore, and are only a short drive away from York."
+  },
+  {
+    "word": "stray",
+    "description": "You'll probably walk across Walmgate Stray at least once in your university career. It can get pretty chilly in Winter!"
+  },
+  {
+    "word": "cooke",
+    "description": "Sir Ronald Urwick Cooke was a Vice-Chancellor at the university. He even has a building named after him on East Campus, the Ron Cooke Hub!"
+  },
+  {
+    "word": "roger",
+    "description": "Visit the Roger Kirk Centre, next to James College, for a bite to eat and a catch-up with your friends/"
+  },
+  {
+    "word": "tower",
+    "description": "Clifford's Tower is one of York's most iconic attractions. The tower recently reopened after a conservation project, so make sure to visit and climb to the top!"
+  },
+  {
+    "word": "acres",
+    "description": "22 Acres are the University of York's playing fields, nestled away next to Halifax College."
+  },
+  {
+    "word": "court",
+    "description": "If you're ever in Derwent, make sure to pay The Courtyard a visit. With events from Karaoke to Quiz Nights, there's something for everyone!"
+  },
+  {
+    "word": "glass",
+    "description": "The Glasshouse is Langwith's student bar, over on East Campus. Stop by for a drink and a game of pool!"
+  },
+  {
+    "word": "field",
+    "description": "Linking the two university campuses, Field Lane is a popular route for students commuting to and from lectures."
+  },
+  {
+    "word": "horse",
+    "description": "York Racecourse traditionally hosts the Summer Ball for University of York students every year. It's certainly an experience!"
+  },
+  {
+    "word": "races",
+    "description": "Horse racing is a tradition in York dating all the way back to Roman times!"
+  },
+  {
+    "word": "punch",
+    "description": "Situated near the station, The Punch Bowl is one of the two Wetherspoons pubs in York, and is a great place to get cheap food and drink."
+  },
+  {
+    "word": "swans",
+    "description": "York has many birds on campus, including swans."
+  },
+  {
+    "word": "first",
+    "description": "The majority of busses in York are operated by First Bus, and they're a great way to get around the city."
+  },
+  {
+    "word": "north",
+    "description": "The University of York is located in the North of England."
+  },
+  {
+    "word": "ricke",
+    "description": "Goodricke College's mascot is called Ricke."
+  }
 ]
