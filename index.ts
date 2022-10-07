@@ -23,7 +23,11 @@ fs.readFile('resources/forbiddenResponse.txt', 'utf8', function (err, data) {
 
 const app: express.Application = express();
 
-app.use(cors())
+let corsOptions = {
+  origin: ["https://yordle.co.uk"],
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json())
 
 var allWords: Array<string>;
